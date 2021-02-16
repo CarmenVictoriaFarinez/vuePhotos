@@ -1,9 +1,14 @@
-<template lang="pug">
-
-  li
-    h2: a(:href="photo.url" tarjet="_blank")
-     | {{photo.title}}
-    img(:src="photo.thumbnailUrl")
+<template>
+  <div class="container">
+      <ul>
+        <li>
+          <a :href="photo.url" tarjet="_blank" rel="noopener noreferrer">
+            {{photo.name}}
+          </a>
+          <img :src="photo.image" alt="">
+        </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -15,11 +20,19 @@ export default {
 </script>
 
 <style >
-  li{
-    display: block;
-    margin: 2px 0;
-    justify-self: center;
+.container{
+  width: 200px;
+}
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     text-align: center;
+}
+
+  img{
+    width: 120px;
+    height: 120px;
   }
 
 </style>
